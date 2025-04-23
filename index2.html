@@ -26,5 +26,46 @@ Prueba
 Prueba 2
 </div>
 Prueba 3
+	****************
+
+
+	    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+    <script>
+      try {
+        window.botpress.open()
+      } catch {}
+
+      window.botpress.on('webchat:initialized', (event) => {
+        window.botpress.open()
+        let interval = setInterval(() => {
+          window.botpress.open()
+          if (window.botpress.state === 'opened') {
+            clearInterval(interval)
+          }
+        }, 50)
+        try {
+          const doc = window.botpress.webchatIframe.contentDocument
+          const style = doc.createElement('style')
+          style.innerHTML = `
+          .bpContainer {
+            border: none;
+}
+
+.bpHeaderContentContainer, .bpHeaderContainer, .bpContainer {
+  border: none;
+  border-radius: 0 !important;
+  }
+  
+  .bpHeaderContentActionsIcons {
+    display: none;
+    }
+    `
+          doc.body.appendChild(style)
+        } catch {}
+      })
+    </script>
+    <script src="https://files.bpcontent.cloud/2025/04/14/14/20250414145234-91VWNWM8.js"></script>
+
+	
 </body>
 </html>
