@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>      
     	<script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
@@ -22,7 +23,7 @@
     <script>
       try {
         window.botpress.open()
-      } catch {}
+      } catch (e) { console.error('Error:',e);}
       window.botpress.on('webchat:initialized', (event) => {
         window.botpress.open()
         let interval = setInterval(() => {
@@ -47,7 +48,7 @@
 	    }
     `
           doc.body.appendChild(style)
-        } catch {}
+    } catch (e) { console.error('Error:',e);}
    
     </script>
 
