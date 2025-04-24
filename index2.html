@@ -2,10 +2,7 @@
     <head>      
     	<script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
 	<script src="https://files.bpcontent.cloud/2025/04/24/08/20250424084721-N0AEB6WJ.js"></script>
-    </head>
-
-
-		    <style>
+    	<style>
         	#webchat .bpWebchat {
                 	position :unset ;
                 	width : 100%;
@@ -18,15 +15,14 @@
               	}
       	</style>
 
+	</head>
 <body>
 
 <div id=”webchat” style=”width: 500px; height: 500px;”>
-    <script src=https://cdn.botpress.cloud/webchat/v2.3/inject.js></script>
     <script>
       try {
         window.botpress.open()
       } catch {}
-
       window.botpress.on('webchat:initialized', (event) => {
         window.botpress.open()
         let interval = setInterval(() => {
@@ -35,30 +31,28 @@
             clearInterval(interval)
           }
         }, 50)
-        try {
+	try {
           const doc = window.botpress.webchatIframe.contentDocument
           const style = doc.createElement('style')
           style.innerHTML = `
           .bpContainer {
-            border: none;
-}
-
-.bpHeaderContentContainer, .bpHeaderContainer, .bpContainer {
-  border: none;
-  border-radius: 0 !important;
-  }
-  
-  .bpHeaderContentActionsIcons {
-    display: none;
-    }
+           	border: none;
+	   }
+	.bpHeaderContentContainer, .bpHeaderContainer, .bpContainer {
+	  border: none;
+	  border-radius: 0 !important;
+	  }
+  	  .bpHeaderContentActionsIcons {
+	    display: none;
+	    }
     `
           doc.body.appendChild(style)
         } catch {}
-      })
+   
     </script>
 
 </div>	
 
-Prueba nueva 2
+Prueba nueva 2222
 </body>
 </html>
