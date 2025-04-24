@@ -23,15 +23,20 @@
     <script>
       try {
         window.botpress.open()
-      } catch (e) { console.error('Error:',e);}
+	document.writeln("por aquí-1")
+      } catch (e) { console.error('Error:',e);
+		  	document.writeln("por aquí-2")
+		  }
       window.botpress.on('webchat:initialized', (event) => {
         window.botpress.open()
         let interval = setInterval(() => {
-          window.botpress.open()
+          	document.writeln("por aquí-3")
+		window.botpress.open()
           if (window.botpress.state === 'opened') {
             clearInterval(interval)
           }
         }, 50)
+	document.writeln("por aquí-4")
 	try {
           const doc = window.botpress.webchatIframe.contentDocument
           const style = doc.createElement('style')
@@ -48,6 +53,7 @@
 	    }
     `
           doc.body.appendChild(style)
+			document.writeln("por aquí-5")
     } catch (e) { console.error('Error:',e);}
    
     </script>
